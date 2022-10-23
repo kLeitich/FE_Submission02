@@ -1,3 +1,45 @@
+//
+
+
+
+document.addEventListener("",()=>{
+  e.preventDefault()
+
+  
+  fetch("https://freddy.codesubmit.io/dashboard",{
+    method:'POST',
+    body:JSON.stringify({
+      Authorization: localStorage.getItem("access_token") 
+    }),
+    headers:{
+       "content-type" : "application/json; charset=UTF-8" 
+    }
+      
+  })
+.then(function(response){
+    return response.json()
+    
+    
+  })
+.then(function(data){
+    console.log(data)
+
+    
+  })
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 // Js for week bar graph
 const week = document.getElementById("graph");
 

@@ -1,4 +1,9 @@
 //js for login
+
+let tokens = {
+  access_token:"",
+  refresh_token:""
+}
 var form =document.getElementById('form')
 
 form.addEventListener('submit',function(e){
@@ -19,13 +24,23 @@ form.addEventListener('submit',function(e){
           
       })
     .then(function(response){
-        return response
-        console.log(response)
+        return response.json()
+        
+        
       })
     .then(function(data){
-        return data
-        console.log(data)
+        tokens.access_token = data.access_token
+        tokens.refresh_token = data.refresh_token
+        localStorage.setItem("access_token",tokens.access_token)
+        localStorage.setItem("refresh_token",tokens.refresh_token)
+        location.replace("index.html")
+
+        
       })
 
 
-    })
+    });
+
+ 
+ 
+ 
