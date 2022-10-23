@@ -1,34 +1,26 @@
-//
 
 
-
-document.addEventListener("",()=>{
-  e.preventDefault()
-
-  
-  fetch("https://freddy.codesubmit.io/dashboard",{
-    method:'POST',
-    body:JSON.stringify({
-      Authorization: localStorage.getItem("access_token") 
-    }),
-    headers:{
-       "content-type" : "application/json; charset=UTF-8" 
-    }
-      
-  })
-.then(function(response){
-    return response.json()
-    
-    
-  })
-.then(function(data){
+async function dashboard(){
+  try{
+    let access_token = localStorage.getItem("access_token")
+    let response = await fetch("https://freddy.codesubmit.io/dashboard",{
+      method: 'get',
+      headers: {
+        "Authorization": "Bearer " +access_token,
+        "content-type" : "application/json; charset=UTF-8"
+      },
+      mode: 'cors',
+      cache: 'default'
+    });
+    let data = await response.json();
     console.log(data)
+    return data;
+  }catch(err){
+    return err;
+  }
+}
+ dashboard()
 
-    
-  })
-
-
-});
 
 
 
