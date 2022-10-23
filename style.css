@@ -1,0 +1,34 @@
+div#graph {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    position: relative;
+  }
+div#graph1 {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    position: relative;
+  }
+  
+  .bar-container {
+    display: flex;
+    align-items: flex-end;
+    align-content: space-between;
+    position:absolute;
+    float: right;
+    height:calc(100%);
+    padding-top: 5%;
+    
+  }
+  
+  .bar {
+    border: 1px ;
+    border-style: solid solid none solid ;
+    
+    margin-left: 1%; 
+  }
+  
+  p.desc{
+    display:inline;
+  }

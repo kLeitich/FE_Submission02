@@ -1,35 +1,139 @@
 // Js for week bar graph
-var canvasElement=document.getElementById("week");
-var config ={
-    type: "bar",
-    data: {
-        labels:["Today","yesterday","Day 3","Day 4","Day 5","Day 6","Day 7"],
-        datasets:[{
-            label:"number of orders",
-            data:[20,30,40,50,70,80,100],
-            backgroundcolor:["rgb(0,0,0)","rgb(0,0,0)","rgb(0,0,0)","rgb(0,0,0)","rgb(0,0,0)","rgb(0,0,0)","rgb(0,0,0)"]
+const week = document.getElementById("graph");
 
-        }],
-    }
+const graphDataWeek = {
+  
+  data: [{
+      name: "today",
+      value: 30,
+    },
+    {
+      name: "yesterday",
+      value: 20,
+    },
+    {
+      name: "day 3",
+      value: 80,
+    },
+    {
+      name: "day 4",
+      value: 30,
+    },
+    {
+      name: "day 5",
+      value: 20,
+    },
+    {
+      name: "day 6",
+      value: 80,
+    },
+     {
+       name:"day 7"
+     }
+  ]
 }
 
-var weekChart= new Chart(canvasElement,config)
+function createGraphIn(week, graphDataWeek) {
+  
+  const numOfBars = graphDataWeek.data.length;
+  var barContainer = document.createElement("div");
+  barContainer.classList.add("bar-container");
+  for (var i = 0; i < numOfBars; i++) {
+    var currentData = graphDataWeek.data[i];
+    
+    var bar = document.createElement("div");
+    bar.classList.add('bar');
+    bar.style.height = currentData.value + "%";
+    barContainer.appendChild(bar);
+    
+    var barDescription = document.createElement("p");
+    barDescription.classList.add('desc');
+    barDescription.innerText = currentData.name;
+    bar.appendChild(barDescription);
+  }
+  week.appendChild(barContainer); 
+}
+createGraphIn(week, graphDataWeek);
 
 // Js for year bar graph
-var canvasElement=document.getElementById("year");
-var config ={
-    type: "bar",
-    data: {
-        labels:["this month","last month","month 3","month 4","month 5","month 6","month 7","month 8","month 9","month 10","month 11","month 12"],
-        datasets:[{
-            label:"number of orders",
-            data:[20,30,40,50,70,80,100,120,200,1000,3000,4000],
+const year = document.getElementById("graph1");
 
-        }],
-    }
+const graphDataYear = {
+  
+  data: [{
+      name: "this month",
+      value: 30,
+    },
+    {
+      name: "last month",
+      value: 20,
+    },
+    {
+      name: "month 3",
+      value: 80,
+    },
+    {
+      name: "month 4",
+      value: 30,
+    },
+    {
+      name: "month 5",
+      value: 20,
+    },
+    {
+      name: "month 6",
+      value: 80,
+    },
+     {
+       name:"month 7",
+       value:100
+     },
+     {
+       name: "month 8",
+       value: 80,
+     },
+     {
+       name: "month 9",
+       value: 30,
+     },
+     {
+       name: "month 10",
+       value: 20,
+     },
+     {
+       name: "month 11",
+       value: 80,
+     },
+      {
+        name:"month 12",
+        value:100
+      }
+  ]
 }
 
-var yearChart= new Chart(canvasElement,config)
+function createGraphIn(year, graphDataYear) {
+  
+  const numOfBars = graphDataYear.data.length;
+  var barContainer = document.createElement("div");
+  barContainer.classList.add("bar-container");
+  for (var i = 0; i < numOfBars; i++) {
+    var currentData = graphDataYear.data[i];
+    
+    var bar = document.createElement("div");
+    bar.classList.add('bar');
+    bar.style.height = currentData.value + "%";
+    barContainer.appendChild(bar);
+    
+    var barDescription = document.createElement("p");
+    barDescription.classList.add('desc');
+    barDescription.innerText = currentData.name;
+    bar.appendChild(barDescription);
+  }
+  year.appendChild(barContainer); 
+}
+createGraphIn(year, graphDataYear);
+
+
 
 //function for switch between week and year bar graph
 
