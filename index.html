@@ -42,9 +42,9 @@
           <h1>Dashboard</h1>
           <br>    
           <div class="d-flex flex-row  gap-5  ">
-                        <div class="p-2 border border-dark" style="width: 25%;">
+                        <div class="p-2 border border-dark" style="width: 25%;" >
                             <h6>Today</h6>
-                            <p>$1456 / 9 orders</p>
+                            <div id="today"></div>
                         </div>
                         <div class="p-2 border border-dark" style="width: 25%;">
                             <h6>Last Week</h6>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="p-2 border border-dark" style="width: 25%;">
                             <h6>Last Month</h6>
-                            <p>$95K /876 orders</p>
+                            <div id="lMonth"></div>
                         </div>
           </div>
           <br>
@@ -69,8 +69,8 @@
               <canvas id="myChart" style="width:100%;"></canvas>
             </div>
           </div>
-          <div id="year" style="display:none;width: 75%;">
-            <div class="d-flex flex-row  justify-content-between" style="width: 75%;">
+          <div id="year" style="display:none;width: 75% ;">
+            <div class="d-flex flex-row  justify-content-between" >
               <div>
                   <h1>Revenue (last 12 months)</h1>
               </div>
@@ -79,6 +79,7 @@
               </div>
             </div>
             <div id="graph1">
+              <canvas id="myChartY" style="width:100%;"></canvas>
             </div>
           </div>
         </div>
@@ -96,25 +97,8 @@
                   <th scope="col">Revenue</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Item 1</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">Item 2</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">Item 3</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+              <tbody id="table_body">
+                
               </tbody>
             </table>
           </div>

@@ -1,8 +1,9 @@
-var dashboard = async function (){
-  
+
+ function search(search_term){
+   
     try{
       let access_token = localStorage.getItem("access_token")
-      let response = await fetch("https://freddy.codesubmit.io/dashboard",{
+      fetch(`https://freddy.codesubmit.io/orders?page=1&q=${search_term}`,{
         method: 'get',
         headers: {
           "Authorization": "Bearer " +access_token,
@@ -10,19 +11,24 @@ var dashboard = async function (){
         },
         mode: 'cors',
         cache: 'default'
-      });
-      let data = await response.json();
-      // let weekTotal ={}
-      
-      // for (i=1;i<=7;i++){
-        
-      //   return console.log(data.dashboard.sales_over_time_week[i].total)
-        
-      // }
-      // // console.log(data.dashboard.sales_over_time_week[1].total)
-      // console.log(weekTotal)
-      console.log(data)
-      return data;
+      }).then(res=>res.json()).then((data)=>{
+        console.log(data)
+
+        //populating the order search table
+        let order =data.orders
+        let tableData="";
+        order.map((values)=>{
+        tableData+=` <tr>
+        <td>${values.product.name}</td>
+        <td>${values.created_at}</td>
+        <td>${values.total/values.product.quantity}</td>
+        <td>${values.status}</td>
+        </tr>`
+     
+    });
+    document.getElementById("order_table").innerHTML= tableData;
+      })
+
     }catch(err){
       return err;
     } 
@@ -30,4 +36,4 @@ var dashboard = async function (){
     
   
   }
-  dashboard()
+   search("cartoon")

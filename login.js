@@ -33,7 +33,7 @@ form.addEventListener('submit',function(e){
         tokens.refresh_token = data.refresh_token
         localStorage.setItem("access_token",tokens.access_token)
         localStorage.setItem("refresh_token",tokens.refresh_token)
-        location.replace("index.html")
+        window.location.href="index.html"
 
         
       })
