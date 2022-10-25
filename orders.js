@@ -1,6 +1,6 @@
-let form = document.getElementById("search")
+let formSearch= document.getElementById("search")
 
-form.addEventListener('submit',function(e){
+formSearch.addEventListener('submit',function(e){
   e.preventDefault()
   let searchTerm = document.getElementById("search_term").value;
   search(searchTerm)
@@ -103,7 +103,7 @@ let search_term=""
    search(search_term)
 
 document.getElementById("logOut").addEventListener("click",function () {
-  window.location.href="login.html";
+  window.location.href="index.html";
   localStorage.clear();
 
   

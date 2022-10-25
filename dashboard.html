@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+  <div class="container-fluid" style="height: 100%;">
+    <div class="row">
+      <div class="col-md-2" >
+        <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%; height: 100%;">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="assets/Freddys_Logo.svg" alt="logo"  class="img-fluid">
+          </a>
+                    
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li>
+              <a href="dashboard.html" class="nav-link link-dark">
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="orders.html" class="nav-link link-dark">
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark" id="logOut">
+                Logout
+              </a>
+            </li>
+          </ul>
+        </nav>
+                <!-- <div class="vr text-dark"></div> -->
+      </div>
+      <div class="col-md-10">
+        <div class="container">
+          <h1>Dashboard</h1>
+          <br>    
+          <div class="d-flex flex-row  gap-5  ">
+                        <div class="p-2 border border-dark" style="width: 25%;" >
+                            <h6>Today</h6>
+                            <div id="today"></div>
+                        </div>
+                        <div class="p-2 border border-dark" style="width: 25%;">
+                            <h6>Last Week</h6>
+                            <p>$34K / 120 orders</p>
+                        </div>
+                        <div class="p-2 border border-dark" style="width: 25%;">
+                            <h6>Last Month</h6>
+                            <div id="lMonth"></div>
+                        </div>
+          </div>
+          <br>
+          <div id="week" style="display:block ;width: 75%;">
+            <div class="d-flex flex-row  justify-content-between" >
+              <div>
+                  <h1>Revenue (last 7 days)</h1>
+              </div>
+              <div class="form-check form-switch fs-1">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onmousedown="toggleDiv('week','year');">                        
+              </div>
+            </div>
+            <div id="graph">
+              <canvas id="myChart" style="width:100%;"></canvas>
+            </div>
+          </div>
+          <div id="year" style="display:none;width: 75% ;">
+            <div class="d-flex flex-row  justify-content-between" >
+              <div>
+                  <h1>Revenue (last 12 months)</h1>
+              </div>
+              <div class="form-check form-switch fs-1">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onmousedown="toggleDiv('week','year');">                        
+              </div>
+            </div>
+            <div id="graph1">
+              <canvas id="myChartY" style="width:100%;"></canvas>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div>
+          <h1>Bestsellers</h1>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-hover  table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">#Units Sold</th>
+                  <th scope="col">Revenue</th>
+                </tr>
+              </thead>
+              <tbody id="table_body">
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+                    
+      </div>
+    </div>
+  </div>
+
+ 
+    <!-- JavaScript Bundle with Popper -->
+    <script src="dasboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+</body>
+</html>
