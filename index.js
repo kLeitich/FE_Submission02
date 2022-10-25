@@ -138,7 +138,7 @@ var refresh = async function (){
 }
 // refresh()
 
-setInterval(refresh,895000)
+setInterval(refresh,30000)
 
 //function for switch between week and year bar graph
 
@@ -157,3 +157,10 @@ function toggleDiv(week,year)
       year.style.display = "none";
    }
 }
+
+document.getElementById("logOut").addEventListener("click",function () {
+  window.location.href="login.html";
+  localStorage.clear();
+
+  
+})

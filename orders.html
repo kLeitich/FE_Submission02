@@ -30,7 +30,7 @@
                       Orders
                     </a>
                   </li>
-                  <li>
+                  <li id="logOut">
                     <a href="#" class="nav-link link-dark">
                       Logout
                     </a>
@@ -48,8 +48,9 @@
                     <h1>Orders</h1>
                   </div>
                   <div class="col">
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                      <input type="search" class="form-control form-control-light text-bg-light" placeholder="Search..." aria-label="Search">
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search" id="search">
+                      <button type="submit" class="btn btn-light"><i class="bi bi-search"></i></button>
+                      <input type="search" class="form-control form-control-light text-bg-light" placeholder="Search..." aria-label="Search" id="search_term">
                     </form>
                   </div>
                 </div>
@@ -68,12 +69,10 @@
                           
                         </tbody>
                   </table>
+                  <div id="pagination" class="pageNumbers">
+                    <!-- <p>Page 1 of 3 <i class="bi bi-play-fill"></i></p> -->
+                  </div>
               </div>   
-                
-                    
-                    
-                
-                
             </div>
         </div>
     </div>
