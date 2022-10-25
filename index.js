@@ -4,9 +4,9 @@ let tokens = {
   access_token:"",
   refresh_token:""
 }
-form =document.getElementById('form')
+// var form =document.getElementById('form')
 
-form.addEventListener('submit',function(e){
+document.getElementById('form').addEventListener('submit',function(e){
       e.preventDefault()
 
       var name=document.getElementById('username').value

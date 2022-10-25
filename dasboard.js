@@ -40,9 +40,7 @@
     for (i in salesWeek){
       weekData+=salesWeek[i].total+ ","
     }
-    // console.log(weekData)
     
-    // console.log(salesWeek)
     var wLabel = ["today", "yesterday", "day 3", "day 4", "day 5","day 6","day 7"];
     
     new Chart("myChart", {
@@ -72,9 +70,7 @@
     for (i in salesYear){
       yearData+=salesYear[i].total+ ","
     }
-    // console.log(yearData)
-    
-    // console.log(salesYear)
+   
     var yLabel = ["this month", "last month", "month 3", "month 4", "month 5","month 6","month 7", "month 8", "month 9", "month 10","month 11","month 12"];
     
     new Chart("myChartY", {
@@ -82,9 +78,6 @@
       data: {
         labels: yLabel,
         datasets: [{
-          // barPercentage: 0.5,
-          // barThickness: 6,
-          // maxBarThickness: 8,
           minBarLength: 2,
           data: yearData
       }]
@@ -138,7 +131,7 @@ var refresh = async function (){
 }
 // refresh()
 
-setInterval(refresh,30000)
+setInterval(refresh,3000)
 
 //function for switch between week and year bar graph
 
